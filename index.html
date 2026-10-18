@@ -1608,6 +1608,9 @@ document.addEventListener('input',function(e){
   afterEdit();
 });
 function newDescs(level,subject,max){return genDesc(level,subject,max).map(function(x){return {text:x[0],pts:x[1]};});}
+document.addEventListener('change',function(e){
+  if(e.target&&e.target.id==='tpl'){var bt=document.querySelector('[data-act="load"]');if(bt){bt.click();}}
+});
 document.addEventListener('click',function(e){
   var b=e.target.closest?e.target.closest('[data-act]'):null;
   if(!b){return;}
